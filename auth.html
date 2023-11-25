@@ -11,7 +11,7 @@
 
 <body>
     <nav>
-        <img class="cursor bordered glow" src="assets/logo.jpg" alt="logo">
+        <img class="cursor glow" src="assets/logo.jpg" alt="logo">
         <svg id="selectLang" class="glow2 cursor" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             fill="black" viewBox="0 0 16 16">
             <path
@@ -21,7 +21,7 @@
     <section id="auth" class="minheight centered">
         <div id="authColumn" class="glow w2m m1 my1 fadeIn">
             <form action="" class="flex flexc">
-                <img class="bordered glow" src="assets/logo.jpg" alt="logo">
+                <img class="glow" src="assets/logo.jpg" alt="logo">
                 <div id="formContent" class="centered flexc">
                     <div id="authTitle" class="authTitle"></div>
                     <div id="authEmail" class="field w100">
@@ -88,9 +88,9 @@
     <div class="hidden">
         <div id="lang-content">
             <div class="centered">
+                <a href="#" id="nextFlag">&gt;</a>
+                <a href="#" id="prevFlag">&lt;</a>
                 <div id="slider">
-                    <a href="#" id="nextFlag">&gt;</a>
-                    <a href="#" id="prevFlag">&lt;</a>
                     <!-- <a class="centered w100" id="langText"></a> -->
                     <ul>
                         <li  class="flag" data-lang="eng">
@@ -128,21 +128,6 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div class="centered flexc minheight">
-                <div id="langText">Select Language</div>
-                <div class="relative ovh">
-                    <div id="prevFlag">&lt;</div>
-                    <ul id="langFlags">
-                        <li><img src="assets/EtatsUnis.gif" alt="English"></li>
-                        <li><img src="assets/Iran.gif" alt="فارسی"></li>
-                        <li><img src="assets/ArabieSaoudite.gif" alt="عربیه"></li>
-                        <li><img src="assets/Japon.gif" alt="Japanese"></li>
-                        <li><img src="assets/CoreeduSud.gif" alt="Korean"></li>
-                        <li><img src="assets/Portugal.gif" alt="Portuguese"></li>
-                    </ul>
-                    <div id="nextFlag">&gt;</div>
-                </div>
-            </div> -->
         </div>
     </div>
     <script src="assets/auth.js"></script>
