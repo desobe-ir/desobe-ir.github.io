@@ -451,7 +451,7 @@ svg path, #slider ul li * {
 }
 
 #auth {
-    background-image: url(assets/logo.jpg);
+    background-image: url(logo.jpg);
     background-size: cover;
     color: black;
 
