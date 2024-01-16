@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" href="assets/css/wb-styles.css">
     <link rel="shortcut icon" href="assets/imgs/GreenWithOutBack1.png" type="image/x-icon">
     <title>Score Rating List</title>
@@ -32,16 +32,16 @@
     <main>
         <div class="centered mt3">
             <img src="/assets/imgs/Line_44.png" alt="">
-            <div class="centered bg-green bordered p1 py05 m1 my2 nowrap">Score Rating</div>
+            <div class="centered bg-green bordered p1 py05 m1 my2 nowrap noselect">Score Rating</div>
             <img src="/assets/imgs/Line_45.png" alt="">
         </div>
-        <div id="hero-links" class="flex centered spc-btw py05 m2 my2">
-            <div><a class="green bordered p2 py05" href="#">Legit</a></div>
-            <div><a class="bordered p2 py05" href="#">Neutral</a></div>
-            <div><a class="bordered p2 py05" href="#">Scam</a></div>
+        <div class="flex centered spc-arnd py05 m2 my2">
+            <a class="wb-green-button p2 py05" href="#">Legit</a>
+            <a class="wb-yellow-button p2 py05" href="#">Neutral</a>
+            <a class="wb-red-button p2 py05" href="#">Scam</a>
         </div>
         <div class="mt3 centered">
-            <div class="bg-linearG bordered p2 py05">is Fahad Fixed Scam or legit?</div>
+            <a class="wb-is-fixed-question p2 py05">is Fahad Fixed <span>Scam</span> or <span>legit</span>?</a>
         </div>
         <div class="mt3 centered">
             <div class="bordered p2 py05 m1 centered">
@@ -164,6 +164,20 @@
             });
 
             hamburger.classList.toggle("toggle");
+        });
+
+        document.querySelector('.wb-is-fixed-question').addEventListener('pointerover', (e)=>{
+            e.target.querySelector('span:first-child').style.color = 'var(--red)';
+            e.target.querySelector('span:last-child').style.color = 'var(--green2)';
+            e.target.querySelector('span:first-child').style.fontWeight = 'bold';
+            e.target.querySelector('span:last-child').style.fontWeight = 'bold';
+        });
+        document.querySelector('.wb-is-fixed-question').addEventListener('pointerout', (e)=>{
+            e.target.querySelector('span:first-child').style.color = 'white';
+            e.target.querySelector('span:last-child').style.color = 'white';
+            e.target.querySelector('span:first-child').style.fontWeight = 'normal';
+            e.target.querySelector('span:last-child').style.fontWeight = 'normal';
+
         });
     </script>
 </body>
