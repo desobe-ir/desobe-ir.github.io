@@ -15,12 +15,6 @@
     font-weight: normal;
 }
 
-@font-face {
-    font-family: Segqui;
-    src: url('SEGOEUI.TTF') format('ttf');
-    font-weight: bold;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -32,6 +26,7 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     color: black;
+    overflow-x: hidden;
 }
 
 body {
@@ -320,6 +315,7 @@ body {
 a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 a.bordered:hover {
@@ -499,7 +495,7 @@ header {
     white-space: nowrap;
 }
 
-#hero-links div {
+#hero-links a {
     width: 100%;
     text-align: center;
     font-size: 0.7rem;
@@ -816,12 +812,68 @@ footer:not(span.bold) {
     z-index: 0;
     opacity: 0.3;
 }
+.wb-green-button {
+    color: var(--green);
+    border-radius: 40px;
+    border: 1px solid var(--green);
+    transition: all 0.1s;
+}
+.wb-yellow-button {
+    color: var(--yellow);
+    border-radius: 40px;
+    border: 1px solid var(--green);
+    transition: all 0.1s;
+}
+.wb-red-button {
+    color: var(--red);
+    border-radius: 40px;
+    border: 1px solid var(--green);
+    transition: all 0.1s;
+}
+.wb-green-button:hover {
+    color: white;
+    border-radius: 40px;
+    border: 1px solid var(--green);
+    background-color: var(--green2);
+    box-shadow: 0 0 1px 2px white;
+}
+.wb-yellow-button:hover {
+    color: white;
+    border-radius: 40px;
+    border: 1px solid var(--yellow);
+    background-color: var(--yellow);
+    box-shadow: 0 0 1px 2px white;
+}
+.wb-red-button:hover {
+    color: white;
+    border-radius: 40px;
+    border: 1px solid var(--red);
+    background-color: var(--red);
+    box-shadow: 0 0 1px 2px white;
+}
+
+.wb-is-fixed-question {
+    border: 1px solid var(--green);
+    border-radius: 40px;
+    width: 30%;
+    text-align: center;
+}
+
+.wb-is-fixed-question span, .noselect {
+    user-select: none;
+    pointer-events: none;
+}
+
+.wb-is-fixed-question:hover
 
 #score-top-links {
     white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        width: 100vw;
+    }
     #hero-img {
         width: 80vw;
     }
