@@ -73,6 +73,10 @@ body {
     width: 33.33%;
 }
 
+.w3m {
+    width: 33.33%;
+}
+
 .w6 {
     width: 66.66%;
 }
@@ -182,6 +186,14 @@ body {
 
 .mt3 {
     margin-top: 3rem;
+}
+
+.mt3m6 {
+    margin-top: 3rem;
+}
+
+.ml05 {
+    margin-left: 0.5rem;
 }
 
 .ml1 {
@@ -338,18 +350,18 @@ a:hover {
 }
 
 #logo-logo {
-    width: 3rem;
+    width: 4rem;
     height: auto;
 }
 
 #logoW {
-    width: 2rem;
+    width: 3rem;
     height: auto;
     margin-left: 0.25rem;
 }
 
 #logoiseBet {
-    width: 4rem;
+    width: 5rem;
     height: auto;
 }
 
@@ -362,7 +374,6 @@ a:hover {
 }
 
 header {
-    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -382,10 +393,11 @@ header {
 
 /*Styling Links*/
 .nav-links{
-    width: 70%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     list-style: none; 
-    padding: 0 0.7vw;
-    margin-left: auto;
+    top: 0.5rem;
 }
 .nav-links li a{
     margin: 0 0.7vw;
@@ -426,6 +438,16 @@ header {
     display: none;
 }
 
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
 
 .bg-gray {
     background-color: var(--gray);
@@ -491,6 +513,11 @@ header {
     display: none;
 }
 
+.hiddend {
+    display: none;
+}
+
+
 .nowrap {
     white-space: nowrap;
 }
@@ -498,7 +525,7 @@ header {
 #hero-links a {
     width: 100%;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: bold;
     white-space: nowrap;
 }
@@ -567,10 +594,11 @@ header {
     margin: 0.5rem;
     border: 1px solid var(--green);
     border-radius: 25px;
+    padding: 1rem 0;
 }
 
 .wb-card img {
-    width: 90%;
+    width: 80%;
     border-radius: 1.2rem;
 }
 
@@ -607,6 +635,14 @@ header {
     border-radius: 5px;
 }
 
+.wb-image-zoom {
+    transition: all 0.1s;
+}
+
+.wb-image-zoom:hover {
+    transform: scale(1.05);
+}
+
 #report-source-imgs {
     height: 50vh;
     text-align: center;
@@ -623,7 +659,9 @@ header {
 .mtauto {
     margin-top: auto;
 }
-
+#wb-youtube {
+    margin-top: -7rem;
+}
 #wb-videos>span {
     color: black;
     font-weight: bold;
@@ -836,6 +874,7 @@ footer:not(span.bold) {
     border: 1px solid var(--green);
     background-color: var(--green2);
     box-shadow: 0 0 1px 2px white;
+    z-index: 2;
 }
 .wb-yellow-button:hover {
     color: white;
@@ -854,17 +893,23 @@ footer:not(span.bold) {
 
 .wb-is-fixed-question {
     border: 1px solid var(--green);
+    background-color: var(--green3);
     border-radius: 40px;
-    width: 30%;
     text-align: center;
 }
 
-.wb-is-fixed-question span, .noselect {
+.wb-is-fixed-question:hover {
+    border: 1px solid var(--green);
+    background-color: transparent;
+    border-radius: 40px;
+    text-align: center;
+    color: white;
+}
+
+.noselect {
     user-select: none;
     pointer-events: none;
 }
-
-.wb-is-fixed-question:hover
 
 #score-top-links {
     white-space: nowrap;
@@ -955,8 +1000,7 @@ footer:not(span.bold) {
         position: absolute;
         cursor: pointer;
         right: 5%;
-        top: 5%;
-        transform: translate(-5%, -50%);
+        top: 2rem;
         z-index: 2;
         transition: all 0.7s ease;
     }
@@ -1015,6 +1059,7 @@ footer:not(span.bold) {
     }
     #wb-youtube {
         margin-left: 0;
+        margin-top: 0;
     }
     .wb-card {
         margin: 2rem;
@@ -1055,15 +1100,20 @@ footer:not(span.bold) {
         margin: 0.5rem;
         width: fit-content;
     }
+    .mt3m6 {
+        margin-top: 6rem;
+    }
+
+    .hiddend {
+        display: flex;
+    }
+
+    .hiddenm {
+        display: none;
+    }
+
+    .w3m {
+        width: 100%;
+    }
 }
 
-.toggle .line1{
-    transform: rotate(-45deg) translate(-5px,6px);
-}
-.toggle .line2{
-    transition: all 0.7s ease;
-    width:0;
-}
-.toggle .line3{
-    transform: rotate(45deg) translate(-5px,-6px);
-}
