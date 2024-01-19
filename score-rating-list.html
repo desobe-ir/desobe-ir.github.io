@@ -22,12 +22,13 @@
             <div class="line3"></div>
         </div>
         <ul class="nav-links centered">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Blogs</a></li>
             <li><a href="#">Score Rating</a></li>
             <li><a href="#">Score Rating List</a></li>
-            <li class="mlauto"><a class="fsz7 nowrap centered bordered p1 py05 green" href="#">Check Sources</a></li>
+            <li><a class="nowrap centered bordered fsz12 p1 py05 wb-green-button mlauto my2 m2 hiddend" href="#">Check Legit</a></li>
         </ul>
+        <a class="nowrap centered bordered fsz12 p1 py05 wb-green-button mlauto my2 m2 hiddenm" href="#">Check Legit</a>
     </nav>
     <main>
         <div class="centered mt3">
@@ -41,7 +42,7 @@
             <a class="wb-red-button p2 py05" href="#">Scam</a>
         </div>
         <div class="mt3 centered">
-            <a class="wb-is-fixed-question p2 py05">is Fahad Fixed <span>Scam</span> or <span>legit</span>?</a>
+            <a class="wb-is-fixed-question p2 py05 fsz2">is Fahad Fixed <span class="red2">Scam</span> or <span class="green">legit</span>?</a>
         </div>
         <div class="mt3 centered">
             <div class="bordered p2 py05 m1 centered">
@@ -50,14 +51,14 @@
             </div>
         </div>
         <div class="mt3 centered">
-            <img class="w6" src="/assets/imgs/photo_2023-12-26_14-37-53_17.png" alt="">
+            <img class="w3m m2 wb-image-zoom" src="/assets/imgs/photo_2023-12-26_14-37-53_17.png" alt="">
         </div>
         <div class="mt3 centered">
             <div class="bordered red2 bold p2 py05 m2">Verified as Scam With Score Rating of
                 0/20</div>
         </div>
         <div class="mt3 centered">
-            <div class="bordered w6 p1 py1">
+            <div class="bordered w6 fsz6 p1 py1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor inLorem ipsum dolor sit amet, consectetur adipiscing
@@ -166,19 +167,6 @@
             hamburger.classList.toggle("toggle");
         });
 
-        document.querySelector('.wb-is-fixed-question').addEventListener('pointerover', (e)=>{
-            e.target.querySelector('span:first-child').style.color = 'var(--red)';
-            e.target.querySelector('span:last-child').style.color = 'var(--green2)';
-            e.target.querySelector('span:first-child').style.fontWeight = 'bold';
-            e.target.querySelector('span:last-child').style.fontWeight = 'bold';
-        });
-        document.querySelector('.wb-is-fixed-question').addEventListener('pointerout', (e)=>{
-            e.target.querySelector('span:first-child').style.color = 'white';
-            e.target.querySelector('span:last-child').style.color = 'white';
-            e.target.querySelector('span:first-child').style.fontWeight = 'normal';
-            e.target.querySelector('span:last-child').style.fontWeight = 'normal';
-
-        });
     </script>
 </body>
 
