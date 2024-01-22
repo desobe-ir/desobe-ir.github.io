@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/print3d.css">
     <title>Print3d</title>
-  <script type="module" crossorigin src="/assets/index-XIB9_43l.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-NIIShfIj.css">
 </head>
 <body>
     <canvas id="p3d"></canvas>
+    <section class="cube-container">
+        <div id="cube">
+            <div class="front">front</div>
+            <div class="back">back</div>
+            <div class="right">right</div>
+            <div class="left">left</div>
+            <div class="top">top</div>
+            <div class="bottom">bottom</div>
+        </div>
+    </section>
     <div id="right-options" class="hidden">
     </div>
     <div id="top-options">
-        <div id="menu-button" data-status="1" title="کوچک/بزرگ کردن منو" class="hoveredon">
+        <div id="menu-button" data-status="1" title="Minimize / Maximize Menu" class="hoveredon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
                 viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
             </svg>
         </div>
-        <div id="layer-top-options" title="لایه‌ها" class="hoveredon flexc centered">
+        <div id="layer-top-options" title="Toggle Layer View" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                  viewBox="0 0 16 16">
                 <path
@@ -27,106 +36,105 @@
                 <path
                     d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
             </svg>
-            <span class="fsz7">لایه‌ها</span>
+            <span class="fsz7">Layer View</span>
         </div>
         <span class="dividerv"></span>
-        <div id="add-top-options" title="افزودن مدل / شئ" class="hoveredon flexc centered">
+        <div id="add-top-options" title="Add Objects and Models" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
               </svg>
-            <span class="fsz7">افزودن</span>
+            <span class="fsz7">Add</span>
         </div>
         <span class="dividerv"></span>
-
-        <div id="table-top-options" title="تنظیمات میز" class="hoveredon flexc centered">
+        <div id="table-top-options" title="Table Settings" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
                 <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z"/>
               </svg>
-            <span class="fsz7">تنظیمات میز</span>
+            <span class="fsz7">Table Settings</span>
         </div>
-        <div id="editor-top-options" title="تنظیمات رابط" class="hoveredon flexc centered">
+        <div id="editor-top-options" title="Editor Settings" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                 <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
                 <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
               </svg>
-            <span class="fsz7">تنظیمات رابط</span>
+            <span class="fsz7">Editor Settings</span>
         </div>
         <span class="dividerv"></span>
-        <div id="undo-top-options" title="لغو" class="hoveredon flexc centered">
+        <div id="undo-top-options" title="Undo" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-90deg-left" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z" />
             </svg>
-            <span class="fsz7">لغو قبلی</span>
+            <span class="fsz7">Undo</span>
         </div>
-        <div id="redo-top-options" title="بازانجام" class="hoveredon flexc centered">
+        <div id="redo-top-options" title="Redo" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
                 class="bi bi-arrow-90deg-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M14.854 4.854a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 4H3.5A2.5 2.5 0 0 0 1 6.5v8a.5.5 0 0 0 1 0v-8A1.5 1.5 0 0 1 3.5 5h9.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4z" />
             </svg>
-            <span class="fsz7">بازانجام</span>
+            <span class="fsz7">Redo</span>
         </div>
         <span class="dividerv"></span>
-        <div id="scale-top-options" title="اندازه" class="hoveredon flexc centered">
+        <div id="scale-top-options" title="Scale" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z"/>
               </svg>
-            <span class="fsz7">اندازه</span>
+            <span class="fsz7">Scale</span>
         </div>
-        <div id="rotate-top-options" title="چرخش" class="hoveredon flexc centered">
+        <div id="rotate-top-options" title="Rotate" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                 <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                 <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
               </svg>
-            <span class="fsz7">چرخش</span>
+            <span class="fsz7">Rotate</span>
         </div>
-        <div id="position-top-options" title="موقعیت" class="hoveredon flexc centered">
+        <div id="position-top-options" title="Position" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"/>
               </svg>
-            <span class="fsz7">موقعیت</span>
+            <span class="fsz7">Position</span>
         </div>
         <span class="dividerv"></span>
-        <div id="options-top-options" title="گزینه‌ها" class="hoveredon flexc centered">
+        <div id="options-top-options" title="Options" class="hoveredon flexc centered">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square" viewBox="0 0 16 16">
                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
               </svg>
-            <span class="fsz7">گزینه‌ها</span>
+            <span class="fsz7">Options</span>
         </div>
     </div>
     <div id="info-panel" class="hidden">
         <div class="centered flexc">
-            <div class="flex wrapped w8 bordered p1">
-                <div id="addCube" title="افزودن مکعب" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
+            <span class="fsz12 bold">Add Objects:</span>
+            <div class="centered wrapped w8 bordered p1">
+                <div id="addCube" title="Add Cube" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-box" viewBox="0 0 16 16">
                         <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
                       </svg>
-                    <span class="fsz7">افزودن مکعب</span>
+                    <span class="fsz7 mt1 bold">Cube</span>
                 </div>
-                <div id="addCylinder" title="افزودن استوانه" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
-                    <svg fill="#000000" height="28" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    viewBox="0 0 512 512" xml:space="preserve">
-               <g>
-                   <g>
-                       <path d="M425.621,38.187C414.763,1.216,272.789,0,256,0S97.237,1.216,86.379,38.187c-0.64,1.387-1.045,2.859-1.045,4.48v426.667
-                           c0,1.707,0.469,3.328,1.152,4.843C98.155,510.805,239.275,512,256,512c16.789,0,158.763-1.216,169.621-38.187
-                           c0.64-1.387,1.045-2.859,1.045-4.48V42.667C426.667,41.045,426.261,39.573,425.621,38.187z M256,21.333
-                           c87.723,0,137.685,13.248,148.075,21.333C393.685,50.752,343.723,64,256,64S118.315,50.752,107.925,42.667
-                           C118.315,34.581,168.277,21.333,256,21.333z M256,490.667c-91.285,0-141.269-14.272-148.437-20.715
-                           C115.947,461.952,165.739,448,256,448c91.285,0,141.269,14.272,148.437,20.715C396.053,476.715,346.24,490.667,256,490.667z
-                            M405.333,446.571C362.688,427.456,269.397,426.667,256,426.667s-106.688,0.789-149.333,19.904V65.429
-                           C149.312,84.544,242.603,85.333,256,85.333s106.688-0.789,149.333-19.904V446.571z"/>
-                   </g>
-               </g>
-               </svg>
-                    <span class="fsz7">افزودن استوانه</span>
+                <div id="addCylinder" title="Add Cylinder" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
+                    <svg height="28" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 512 512" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M425.621,38.187C414.763,1.216,272.789,0,256,0S97.237,1.216,86.379,38.187c-0.64,1.387-1.045,2.859-1.045,4.48v426.667
+                                    c0,1.707,0.469,3.328,1.152,4.843C98.155,510.805,239.275,512,256,512c16.789,0,158.763-1.216,169.621-38.187
+                                    c0.64-1.387,1.045-2.859,1.045-4.48V42.667C426.667,41.045,426.261,39.573,425.621,38.187z M256,21.333
+                                    c87.723,0,137.685,13.248,148.075,21.333C393.685,50.752,343.723,64,256,64S118.315,50.752,107.925,42.667
+                                    C118.315,34.581,168.277,21.333,256,21.333z M256,490.667c-91.285,0-141.269-14.272-148.437-20.715
+                                    C115.947,461.952,165.739,448,256,448c91.285,0,141.269,14.272,148.437,20.715C396.053,476.715,346.24,490.667,256,490.667z
+                                        M405.333,446.571C362.688,427.456,269.397,426.667,256,426.667s-106.688,0.789-149.333,19.904V65.429
+                                    C149.312,84.544,242.603,85.333,256,85.333s106.688-0.789,149.333-19.904V446.571z"/>
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="fsz7 mt1 bold">Cylinder</span>
                 </div>
-                <div id="addSphere" title="افزودن کره" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
-                    <svg  id="addSphere" height="28" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                <div id="addSphere" title="Add Sphere" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
+                    <svg height="28" width="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
     viewBox="0 0 275.331 275.331" xml:space="preserve">
                         <g>
                             <g>
@@ -190,18 +198,150 @@
                             </g>
                         </g>
                     </svg>
-                    <span class="fsz7">افزودن کره</span>
+                    <span class="fsz7 mt1 bold">Sphere</span>
+                </div>
+                <div id="addCone" title="Add Cone" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
+                    <svg height="28" width="28" fill="currentColor" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                    <path
+                    d="m 7.5167683,1.88 c 0.6875514,0.00445 0.2031077,0.00955 0.9622486,0.018209 L 11.875,13.5 c 0.0062,2.343362 -7.7800827,2.427965 -7.75,0 z"
+                    id="path2"
+                    style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1;stroke-dasharray:none" />
+                        </svg>
+
+                    <span class="fsz7 mt1 bold">Cone</span>
+                </div>
+                <div id="addPolyHedron" title="Add PolyHedron" class="hoveredon flexc centered bordered m1 my1 p1 py1  info-icons">
+                    <svg height="28" width="28" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.752 511.752" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M510.596,251.012c-0.064-0.128-0.043-0.299-0.107-0.427l-128-224c-0.107-0.171-0.299-0.235-0.384-0.384
+                                    c-0.128-0.192-0.128-0.405-0.277-0.597c-0.896-1.216-1.984-2.176-3.2-2.901c-0.149-0.085-0.341-0.085-0.491-0.171
+                                    c-1.344-0.704-2.773-1.045-4.267-1.152c-0.235,0-0.427-0.171-0.661-0.171H138.543c-0.213,0-0.384,0.149-0.576,0.149
+                                    c-1.643,0.085-3.264,0.448-4.715,1.28c-0.021,0-0.064,0-0.085,0.021c-1.237,0.725-2.347,1.685-3.243,2.923
+                                    c-0.149,0.192-0.171,0.427-0.277,0.619c-0.107,0.149-0.277,0.213-0.384,0.384l-128,224c-0.085,0.149-0.043,0.299-0.128,0.448
+                                    c-0.704,1.387-1.045,2.816-1.131,4.288c-0.021,0.512,0.043,0.96,0.107,1.472c0.107,1.195,0.405,2.325,0.896,3.413
+                                    c0.128,0.299,0.085,0.661,0.256,0.96l128,224c0.171,0.299,0.491,0.405,0.683,0.683c0.725,1.024,1.557,1.877,2.603,2.603
+                                    c0.405,0.277,0.747,0.576,1.173,0.789c1.451,0.768,3.051,1.301,4.821,1.301H373.21c1.771,0,3.371-0.533,4.843-1.301
+                                    c0.427-0.213,0.768-0.512,1.173-0.789c1.024-0.725,1.899-1.579,2.603-2.624c0.192-0.256,0.491-0.384,0.661-0.661l128-224
+                                    c0.149-0.277,0.107-0.597,0.235-0.896c0.512-1.131,0.832-2.304,0.939-3.541c0.043-0.469,0.107-0.896,0.085-1.365
+                                    C511.684,253.871,511.322,252.42,510.596,251.012z M340.42,42.543l-84.544,61.483l-84.523-61.483H340.42z M355.162,319.876
+                                    H156.591l99.285-180.501L355.162,319.876z M127.876,439.706l-88.32-154.56l88.32,51.52V439.706z M134.468,315.823L25.05,251.993
+                                    L141.892,47.492l100.096,72.811L134.468,315.823z M362.543,469.21H149.21v-128h213.333V469.21z M383.898,439.684V336.665
+                                    l88.299-51.499L383.898,439.684z M377.306,315.823l-107.541-195.52L369.86,47.514l116.843,204.48L377.306,315.823z"/>
+                            </g>
+                        </g>
+                        </svg>
+
+                    <span class="fsz7 mt1 bold">PolyHedron</span>
                 </div>
             </div>
+            <span class="fsz12 bold">Add Models:</span>
             <input id="addModel" type="file" class="w8 mt3">
         </div>
-
+    </div>
+    <div id="layer-panel" class="hidden centered flexc">
+        <input id="layer-slider" type="range" orient="vertical">
     </div>
     <div class="hidden">
+        <div id="options-top-options-content-table">
+            <div class="flex flexc">
+                <div class="flex spc-btw">
+                    <span>Table Settings</span>
+                    <em class="selected-info"></em>
+                    <svg id="minimize-right-option" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="hoveredon" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+                <div class="flex wrapped">
+                    <div data-type="selected-table-width" class="ranged centered">
+                        <span>Width (X):  </span>
+                        <input type="tel" class="value" value="0">
+                        <em>(mm)</em>
+                    </div>
+                    <div data-type="selected-table-height" class="ranged centered">
+                        <span>| Height (Y):  </span>
+                        <input type="tel" class="value" value="0">
+                        <em>(mm)</em>
+                    </div>
+                    <div data-type="selected-table-depth" class="ranged centered">
+                        <span>| Depth (Z):  </span>
+                        <input type="tel" class="value" value="0">
+                        <em>(mm)</em>
+                    </div>
+                </div>
+                <div data-type="selected-position-x" class="ranged centered">
+                    <span>Translate on X:  </span>
+                    <label class="slider mlauto">
+                        <input type="range" class="level" min="-10" max="10" step="0.1" value="0">
+                    </label>
+                    <em>(mm)</em>
+                    <input type="tel" class="value" value="0">
+                </div>
+                <div data-type="selected-position-y" class="ranged centered">
+                    <span>Translate on Y:  </span>
+                    <label class="slider mlauto">
+                        <input type="range" class="level" min="-10" max="10" step="0.1" value="0">
+                    </label>
+                    <em>(mm)</em>
+                    <input type="tel" class="value" value="0">
+                </div>
+                <div data-type="selected-position-z" class="ranged centered">
+                    <span>Translate on Z:  </span>
+                    <label class="slider mlauto">
+                        <input type="range" class="level" min="-10" max="10" step="0.1" value="0">
+                    </label>
+                    <em>(mm)</em>
+                    <input type="tel" class="value" value="0">
+                </div>
+                <div class="divider"></div>
+                <div data-type="selected-scale-x" class="ranged centered">
+                    <span>Scale on X:  </span>
+                    <label class="slider mlauto">
+                        <input type="range" class="level" min="-20" max="20" step="0.1" value="0">
+                    </label>
+                    <em>(unit)</em>
+                    <input type="tel" class="value" value="0">
+                </div>
+                <div data-type="selected-scale-y" class="ranged centered">
+                    <span>Scale on Y:  </span>
+                    <label class="slider mlauto">
+                        <input type="range" class="level" min="-20" max="20" step="0.1" value="0">
+                    </label>
+                    <em>(unit)</em>
+                    <input type="tel" class="value" value="0">
+                </div>
+                <div data-type="selected-scale-z" class="ranged centered">
+                    <span>Scale on Z:  </span>
+                    <label class="slider mlauto">
+                        <input type="range" class="level" min="-20" max="20" step="0.1" value="0">
+                    </label>
+                    <em>(unit)</em>
+                    <input type="tel" class="value" value="0">
+                </div>
+                <div class="divider"></div>
+                <div class="flex wrapped">
+                    <div data-type="selected-grid-size-x" class="ranged centered">
+                        <span>Grid Division X Size:&nbsp;</span>
+                        <div class="value fsz8">20</div>
+                        <em>(mm)</em>
+                    </div>
+                    <div data-type="selected-grid-size-z" class="ranged centered">
+                        <span> | Grid Division Z Size:&nbsp;</span>
+                        <div class="value fsz8">20</div>
+                        <em>(mm)</em>
+                    </div>
+                    <div data-type="selected-grid-divisions" class="ranged centered">
+                        <span>| Grid divisions:  </span>
+                        <input type="number" class="value" value="20">
+                        <em>(unit)</em>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="options-top-options-content-3d">
             <div class="flex flexc">
                 <div class="flex spc-btw">
-                    <span>نوع آبجکت</span>
+                    <span>Object Information:</span>
                     <em class="selected-info"></em>
                     <svg id="minimize-right-option" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="hoveredon" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
@@ -209,41 +349,41 @@
                 </div>
                 <div class="flex wrapped">
                     <div data-type="selected-width" class="ranged centered">
-                        <span>طول (X):  </span>
-                        <em>(mm)</em>
+                        <span>Width (X):  </span>
                         <input type="tel" class="value" value="0">
+                        <em>(mm)</em>
                     </div>
                     <div data-type="selected-height" class="ranged centered">
-                        <span>عرض (Y):  </span>
-                        <em>(mm)</em>
+                        <span>| Height (Y):  </span>
                         <input type="tel" class="value" value="0">
+                        <em>(mm)</em>
                     </div>
                     <div data-type="selected-depth" class="ranged centered">
-                        <span>ارتفاع (Z):  </span>
-                        <em>(mm)</em>
+                        <span>| Depth (Z):  </span>
                         <input type="tel" class="value" value="0">
+                        <em>(mm)</em>
                     </div>
                 </div>
                 <div class="divider"></div>
                 <div data-type="selected-position-x" class="ranged centered">
-                    <span>جابجایی افقی (Shift on X):  </span>
-                    <label class="slider mrauto">
+                    <span>Translate on X:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-10" max="10" step="0.1" value="0">
                     </label>
                     <em>(mm)</em>
                     <input type="tel" class="value" value="0">
                 </div>
                 <div data-type="selected-position-y" class="ranged centered">
-                    <span>جابجایی عمودی (Shift on Y):  </span>
-                    <label class="slider mrauto">
+                    <span>Translate on Y:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-10" max="10" step="0.1" value="0">
                     </label>
                     <em>(mm)</em>
                     <input type="tel" class="value" value="0">
                 </div>
                 <div data-type="selected-position-z" class="ranged centered">
-                    <span>جابجایی عمود بر میز (Shift on Z):  </span>
-                    <label class="slider mrauto">
+                    <span>Translate on Z:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-10" max="10" step="0.1" value="0">
                     </label>
                     <em>(mm)</em>
@@ -251,24 +391,24 @@
                 </div>
                 <div class="divider"></div>
                 <div data-type="selected-rotation-x" class="ranged centered">
-                    <span>چرخش افقی (Rotation on X):  </span>
-                    <label class="slider mrauto">
+                    <span>Rotation on X:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-360" max="360" step="1" value="0">
                     </label>
                     <em>(deg)</em>
                     <input type="tel" class="value" value="0">
                 </div>
                 <div data-type="selected-rotation-y" class="ranged centered">
-                    <span>چرخش عمودی (Rotation on Y):  </span>
-                    <label class="slider mrauto">
+                    <span>Rotation on Y:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-360" max="360" step="1" value="0">
                     </label>
                     <em>(deg)</em>
                     <input type="tel" class="value" value="0">
                 </div>
                 <div data-type="selected-rotation-z" class="ranged centered">
-                    <span>چرخش عمود بر میز (Rotation on Z):  </span>
-                    <label class="slider mrauto">
+                    <span>Rotation on Z:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-360" max="360" step="0.1" value="0">
                     </label>
                     <em>(deg)</em>
@@ -276,27 +416,27 @@
                 </div>
                 <div class="divider"></div>
                 <div data-type="selected-scale-x" class="ranged centered">
-                    <span>مقیاس افقی (Scale on X):  </span>
-                    <label class="slider mrauto">
+                    <span>Scale on X:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-20" max="20" step="0.1" value="0">
                     </label>
-                    <em>(mm)</em>
+                    <em>(unit)</em>
                     <input type="tel" class="value" value="0">
                 </div>
                 <div data-type="selected-scale-y" class="ranged centered">
-                    <span>مقیاس عمودی (Scale on Y):  </span>
-                    <label class="slider mrauto">
+                    <span>Scale on Y:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-20" max="20" step="0.1" value="0">
                     </label>
-                    <em>(mm)</em>
+                    <em>(unit)</em>
                     <input type="tel" class="value" value="0">
                 </div>
                 <div data-type="selected-scale-z" class="ranged centered">
-                    <span>مقیاس عمود بر میز (Scale on Z):  </span>
-                    <label class="slider mrauto">
+                    <span>Scale on Z:  </span>
+                    <label class="slider mlauto">
                         <input type="range" class="level" min="-20" max="20" step="0.1" value="0">
                     </label>
-                    <em>(mm)</em>
+                    <em>(unit)</em>
                     <input type="tel" class="value" value="0">
                 </div>
             </div>
@@ -307,12 +447,13 @@
             d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13z" />
         <path
             d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
-    </svg>
-    <svg id="menu-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-    viewBox="0 0 16 16">
-    <path fill-rule="evenodd"
-        d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-</svg>
+        </svg>
+        <svg id="menu-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        </svg>
     </div>
+    <script type="module" src="/assets/js/print3d.js"></script>
 </body>
 </html>
