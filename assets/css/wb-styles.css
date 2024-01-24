@@ -10,8 +10,8 @@
 }
 
 @font-face {
-    font-family: Segqui;
-    src: url('SEGOEUI.TTF') format('ttf');
+    font-family: Lato;
+    src: url('Lato-Regular.ttf') format('truetype');
     font-weight: normal;
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 body {
-    font-family: 'Segqui', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: var(--blue);
     color: white;
 }
@@ -350,7 +350,7 @@ a:hover {
 }
 
 #logo-logo {
-    width: 4rem;
+    width: 5rem;
     height: auto;
 }
 
@@ -538,12 +538,6 @@ header {
     font-size: 1rem;
     font-weight: bold;
     white-space: nowrap;
-}
-
-#wbcompare .bg-red,
-#wbcompare .bg-green2 {
-    font-size: 0.8rem;
-    font-weight: bold;
 }
 
 .compare-image-container {
