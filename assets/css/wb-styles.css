@@ -123,6 +123,10 @@ body {
     margin-left: auto;
 }
 
+.mlautomc {
+    margin-left: auto;
+}
+
 .p05 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -188,7 +192,7 @@ body {
     margin-top: 3rem;
 }
 
-.mt3m6 {
+.mt3m8 {
     margin-top: 3rem;
 }
 
@@ -661,6 +665,9 @@ header {
     font-size: 5rem;
 }
 
+#report-source-imgs p {
+    font-size: 0.7rem;
+}
 .mtauto {
     margin-top: auto;
 }
@@ -770,6 +777,10 @@ header {
     height: 15px;
     border-radius: 50%;
     background-color: var(--red2);
+}
+
+.score-star {
+    display: flex;
 }
 
 .yellow-star {
@@ -906,14 +917,16 @@ footer:not(span.bold) {
 
 .wb-is-fixed-question {
     border: 1px solid var(--green);
-    background-color: var(--green3);
+    background-color: black;
     border-radius: 40px;
     text-align: center;
+    font-size: 1.5rem;
+    
 }
 
 .wb-is-fixed-question:hover {
     border: 1px solid var(--green);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.514);
     border-radius: 40px;
     text-align: center;
     color: white;
@@ -1198,7 +1211,7 @@ footer:not(span.bold) {
     }
 
     #report-source-imgs {
-        height: 30vh;
+        height: 70vh;
         text-align: center;
     }
 
@@ -1217,6 +1230,10 @@ footer:not(span.bold) {
 
     #report-source-imgs>span {
         font-size: 2rem;
+    }
+
+    #report-source-imgs p {
+        font-size: 0.8rem;
     }
 
     #report-source .fsz6.bold {
@@ -1386,7 +1403,7 @@ footer:not(span.bold) {
     }
 
     #score-top-links {
-        font-size: 0.4rem;
+        font-size: 0.7rem;
     }
 
     #score-top-links div {
@@ -1395,8 +1412,8 @@ footer:not(span.bold) {
         width: fit-content;
     }
 
-    .mt3m6 {
-        margin-top: 6rem;
+    .mt3m8 {
+        margin-top: 8rem;
     }
 
     .hiddend {
@@ -1409,5 +1426,16 @@ footer:not(span.bold) {
 
     .w3m {
         width: 100%;
+    }
+    .compare-image-container {
+        height: 30vh;
+    }
+    #score-top-links>div>div a{
+        width: 80%;
+    }
+    .mlautomc {
+        margin-left: 2rem;
+        justify-content: center;
+        text-align: center;
     }
 }
