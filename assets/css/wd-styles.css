@@ -1,0 +1,368 @@
+:root {
+    --gray: #2f2e43;
+    --yellow: #B1B502;
+    --red: #ff595e;
+    --green: #042D00;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0 3rem;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: black;
+    overflow-x: hidden;
+    color: white;
+    font-family: Averia Sans Libre;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.flex {
+    display: flex;
+}
+
+.flexc {
+    flex-direction: column;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spc-btw {
+    justify-content: space-between;
+}
+
+.spc-arnd {
+    justify-content: space-around;
+}
+
+.p05 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.p1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.p2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.mt1 {
+    margin-top: 1rem;
+}
+
+.mt3 {
+    margin-top: 3rem;
+}
+
+.my1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.my05 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.ml1 {
+    margin-left: 1rem;
+}
+
+.ml05 {
+    margin-left: 0.5rem;
+}
+
+.mlautomc {
+    margin-left: auto;
+}
+
+.m1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.m2 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.py1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py05 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.fsz2 {
+    font-size: 2rem;
+}
+
+.fsz12 {
+    font-size: 1.2rem;
+}
+
+.fsz5 {
+    font-size: 0.5rem;
+}
+
+.fsz6 {
+    font-size: 0.6rem;
+}
+
+.fsz9 {
+    font-size: 0.9rem;
+}
+
+.fsz8 {
+    font-size: 0.8rem;
+}
+
+.fsz7 {
+    font-size: 0.7rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.w3 {
+    width: 33.33%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.has-shadow {
+    filter: drop-shadow(0 0 2rem white);
+}
+
+.bordered {
+    border: 1px solid white;
+    border-radius: 0.5rem;
+}
+
+.button {
+    border: 1px solid white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    user-select: none;
+}
+
+.taligned {
+    text-align: center;
+}
+
+.button:hover,
+.control .addon:hover {
+    background-color: rgba(241, 70, 104, 0.8);
+    user-select: none;
+}
+
+.green {
+    color: #10CA00;
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-red {
+    background-color: var(--red) !important;
+}
+
+.bg-dark-dark {
+    background-color: #0A0A0A80;
+    border-radius: 0.75rem;
+}
+
+.bg-light-dark {
+    background-color: #0D0D0D;
+    border-radius: 0.75rem;
+
+}
+
+.w15rem {
+    width: 1.5rem;
+}
+
+/* accordion */
+.tab input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.tab__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s;
+}
+
+.tab input[type='checkbox']:checked~.tab__content {
+    max-height: 70vh;
+}
+
+/* Visual styles */
+.accordion {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+
+.tab__label,
+.tab__close {
+    display: flex;
+    cursor: pointer;
+}
+
+.tab__label {
+    justify-content: space-between;
+    position: relative;
+}
+
+.tab__label::after {
+    /* transform-origin: top center; */
+    position: absolute;
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    transform: rotate(180deg);
+    transition: all 0.35s;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.1rem;
+}
+
+.tab input[type='checkbox']:checked+.tab__label::after {
+    transform: rotate(90deg);
+}
+
+.tab__close {
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+#hero {
+    background-image: url(/assets/imgs/e4c42c900dbd0056f2a14bcc3e972919.jpeg);
+    background-size: 40%;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 80vh;
+}
+
+.hero-image {
+    background-image: url(/assets/imgs/Frame_5427.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 40vh;
+    width: 50%;
+    align-self: flex-end;
+}
+
+.hero-stats {
+    background-color: black;
+    width: 60%;
+    min-height: 40vh;
+    border-radius: 0.5rem;
+}
+
+.bordered2 {
+
+    box-shadow: -10px -10px 10px 0px #3B3B3B66 inset,
+        10px 10px 10px 0px #0F0F0F80 inset;
+    border-radius: 1rem;
+
+}
+
+.dot {
+    border: 1px solid white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 1px;
+}
+
+.testimonials img {
+    width: 8rem;
+    margin: 0 0.5rem;
+}
+
+.contact {
+    width: 60%;
+}
+
+.contact-us {
+    background-image: url(/assets/imgs/contact-us.svg);
+    background-size: contain;
+    background-position: 20%;
+    background-repeat: no-repeat;
+}
+
+footer {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(/assets/imgs/3b03cdf796ffed15fd733f47fdbbf557.jpeg);
+    background-size: cover;
+    background-position: 20%;
+    background-repeat: no-repeat;
+    -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 0.5rem;
+    }
+    .flexmc {
+        flex-direction: column;
+    }
+    .mlautomc {
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-image, .hero-stats {
+        width: 100%;
+    }
+}
