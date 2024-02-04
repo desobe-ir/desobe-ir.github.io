@@ -4,11 +4,13 @@
     --red: #ff595e;
     --green: #042D00;
 }
+
 @font-face {
     font-family: Lato;
     src: url('Lato-Regular.ttf') format('truetype');
     font-weight: normal;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -412,30 +414,31 @@ footer {
         white-space: nowrap;
         overflow-x: scroll;
     }
+
     #hero {
         background-size: 70%;
     }
 
-    .bg-dark-dark {
+
+    .bg-dark-dark:not(.w100) {
         width: 200%;
     }
-    
     .span-2 {
+        width: 20%;
+    }
+
+    .span-3 {
+        width: 20%;
+    }
+
+    .span-4 {
         width: 10%;
     }
-    
-    .span-3 {
-        width: 30%;
-    }
-    
-    .span-4 {
-        width: 5%;
-    }
-    
+
     .span-5 {
         width: 10%;
     }
-    
+
     .span-6 {
         width: 10%;
     }
@@ -444,8 +447,8 @@ footer {
         width: 100%;
     }
 
-.footer-links {
-    width: 100%;
-}
-    
+    .footer-links {
+        width: 100%;
+    }
+
 }
