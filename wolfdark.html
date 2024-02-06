@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/splide.min.css">
     <link rel="stylesheet" href="/assets/css/wd-styles.css">
     <title>Document</title>
 </head>
@@ -273,7 +274,19 @@
     </section>
     <section class="centered flexc testimonials mt3 bordered2">
         <p>Testimonials and Winnings</p>
-        <div class="flex">
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide"><img src="/assets/imgs/transfert.png" alt=""></li>
+                    <li class="splide__slide"><img src="/assets/imgs/transfert.png" alt=""></li>
+                    <li class="splide__slide"><img src="/assets/imgs/transfert.png" alt=""></li>
+                    <li class="splide__slide"><img src="/assets/imgs/transfert.png" alt=""></li>
+                    <li class="splide__slide"><img src="/assets/imgs/transfert.png" alt=""></li>
+                    <li class="splide__slide"><img src="/assets/imgs/transfert.png" alt=""></li>
+                </ul>
+            </div>
+        </section>
+        <!-- <div class="flex">
             <img src="/assets/imgs/transfert.png" alt="">
             <img src="/assets/imgs/transfert.png" alt="">
             <img src="/assets/imgs/transfert.png" alt="">
@@ -290,7 +303,7 @@
             <div class="dot"></div>
             <div class="dot"></div>
             <div class="dot"></div>
-        </div>
+        </div> -->
     </section>
     <section class="contact-us centered mt3 bordered2 py1">
         <div class="contact centered flexc">
@@ -299,7 +312,7 @@
                 commodi, aliquam
                 cupiditate voluptatum quas ex vero assumenda beatae repellat officia, dolore quaerat? Dolor cupiditate
                 sequi sint quidem?</p>
-            <div class="flex wrapped">
+            <div class="flex wrapped centered">
                 <div class="centered">
                     <img class="w15rem" src="/assets/imgs/telegram2.svg" alt="">
                     <span class="fsz8 p1">telegram_id</span>
@@ -313,9 +326,9 @@
 
     </section>
     <footer>
-        <div class="flex wrapped spc-btw mt3">
-            <img class="w15rem" src="/assets/imgs/logo.svg" alt="logo">
-            <div class="flex fsz9 bold mt3 nowrap">
+        <div class="centered wrapped spc-btw mt3 footer-start">
+            <img class="w15rem h15rem m1" src="/assets/imgs/logo.svg" alt="logo">
+            <div class="flex fsz9 bold nowrap">
                 <a href="#">ABOUT US</a>
                 <a class="p1" href="#">PRESS</a>
                 <a class="p1" href="#">CONTACT US</a>
@@ -328,7 +341,7 @@
             </div>
         </div>
         <div class="centered spc-btw mt3 wrapped">
-            <div class="flex flexc">
+            <div class="flex flexc footer-about">
                 <p class="fsz8 bold">About Us</p>
                 <p class="fsz8">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Beatae a optio molestias
                     nobis ipsum assumenda minus<br> perferendis! Ducimus ratione, itaque velit non vero.</p>
@@ -346,5 +359,31 @@
         </div>
     </footer>
 </body>
+
+<script src="/assets/js/splide.min.js"></script>
+
+<script>
+    let perPage = 4;
+    if (window.innerHeight> window.innerWidth) {
+        perPage = 1;
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var splide = new Splide('.splide',
+            {
+                type: 'loop',
+                autoplay: true,
+                focus: 'center',
+                width: '75vw',
+                height: '70vh',
+                perPage: perPage,
+                perMove: 1,
+                padding: '0.5rem',
+                autoScroll: {
+                    speed: 1,
+                },
+            });
+        splide.mount();
+    });
+</script>
 
 </html>
