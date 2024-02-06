@@ -230,6 +230,10 @@ a {
     width: 1.5rem;
 }
 
+.h15rem {
+    height: 1.5rem;
+}
+
 /* accordion */
 .tab input[type='checkbox'] {
     position: absolute;
@@ -321,7 +325,7 @@ a {
     border-radius: 1rem;
 
 }
-
+/* 
 .dot {
     border: 1px solid white;
     width: 15px;
@@ -329,11 +333,17 @@ a {
     border-radius: 50%;
     background-color: white;
     margin: 1px;
-}
+} */
 
-.testimonials img {
+/* .testimonials img {
     width: 8rem;
     margin: 0 0.5rem;
+} */
+
+.splide__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact {
@@ -449,6 +459,19 @@ footer {
 
     .footer-links {
         width: 100%;
+    }
+
+    .footer-about {
+        width: 100%;
+        text-align: center;
+    }
+    .footer-start {
+        justify-content: center;
+    }
+    footer .w15rem {
+        width: 2rem !important;
+        height: 2rem !important;
+        margin: 0.5rem !important;
     }
 
 }
