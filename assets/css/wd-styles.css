@@ -56,6 +56,9 @@ body {
     flex-wrap: wrap;
 }
 
+.hidden {
+    display: none;
+}
 .p05 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -77,6 +80,10 @@ body {
 
 .mt3 {
     margin-top: 3rem;
+}
+
+.mt6 {
+    margin-top: 6rem;
 }
 
 .my1 {
@@ -116,6 +123,20 @@ body {
     padding-bottom: 1rem;
 }
 
+.py3 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.my3 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.my2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 .py05 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -302,8 +323,8 @@ a {
 }
 
 .hero-image {
-    background-image: url(/assets/imgs/Frame_5427.png);
-    background-size: contain;
+    background-image: url(/assets/imgs/next-bg.jpg);
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     min-height: 40vh;
@@ -315,7 +336,7 @@ a {
     background-color: black;
     width: 60%;
     min-height: 40vh;
-    border-radius: 0.5rem;
+    margin-left: 1rem;
 }
 
 .bordered2 {
@@ -334,12 +355,13 @@ a {
 
 .contact {
     width: 60%;
+    height: 100%;
 }
 
 .contact-us {
     background-image: url(/assets/imgs/contact-us.svg);
-    background-size: contain;
-    background-position: 20%;
+    background-size: 22.5%;
+    background-position: 5%;
     background-repeat: no-repeat;
 }
 
@@ -381,7 +403,45 @@ footer {
     width: 20%;
 }
 
+.menu {
+    cursor: pointer;
+}
 
+.close {
+    cursor: pointer;
+    font-size: 4rem;
+    margin-right: 6rem;
+}
+
+#menu-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.425);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    transition: all 0.25s;
+}
+#menu-content a {
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.25s;
+}
+#menu-content a:hover {
+    background-color: var(--red);
+    color: black;
+}
+.red {
+    color: var(--red);
+}
+.mlauto {
+    margin-left: auto;
+}
 @media screen and (max-width: 768px) {
     body {
         padding: 0 0.5rem;
