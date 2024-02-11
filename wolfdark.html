@@ -13,7 +13,7 @@
     <section id="hero" class="centered flexc">
         <div class="flex spc-btw mt1 w100">
             <img class="w15rem" src="/assets/imgs/logo.svg" alt="logo">
-            <img class="w15rem" src="/assets/imgs/menu-icon.svg" alt="Menu">
+            <img class="w15rem menu" src="/assets/imgs/menu-icon.svg" alt="Menu">
         </div>
         <p class="mt3">A Nice Typography</p>
         <p class="taligned p2 m2 fsz8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, illo
@@ -22,8 +22,9 @@
             aliquid.
         </p>
         <a href="#" class="button p2 py05">Pricing</a>
-        <div class="centered flexmc w100 mt3">
-            <div class="hero-image">
+        <div class="centered flexmc w100 mt6">
+            <div class="hero-image bordered2 centered">
+                <span class="fsz12">Next Fixed Matches Date</span>
             </div>
             <div class="hero-stats bordered2 centered flexc mlautomc">
                 <div class="flex spc-arnd w100 my1 fsz8">
@@ -305,14 +306,14 @@
             <div class="dot"></div>
         </div> -->
     </section>
-    <section class="contact-us centered mt3 bordered2 py1">
-        <div class="contact centered flexc">
-            <p class="fsz12 bold">Contact Us Now</p>
-            <p class="fsz8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, nulla minima. Impedit
+    <section class="contact-us centered mt3 bordered2">
+        <div class="contact centered flexc spc-btw">
+            <p class="fsz12 bold my2">Contact Us Now</p>
+            <p class="fsz8 my2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, nulla minima. Impedit
                 commodi, aliquam
                 cupiditate voluptatum quas ex vero assumenda beatae repellat officia, dolore quaerat? Dolor cupiditate
                 sequi sint quidem?</p>
-            <div class="flex wrapped centered">
+            <div class="flex wrapped centered my2">
                 <div class="centered">
                     <img class="w15rem" src="/assets/imgs/telegram2.svg" alt="">
                     <span class="fsz8 p1">telegram_id</span>
@@ -324,6 +325,15 @@
             </div>
         </div>
 
+    </section>
+    <section id='menu-content' class="hidden flex flexc">
+        <div class="close menu mlauto red">&times;</div>
+        <div class="centered w100 flexc my1">
+            <a target="_blank" href="/next">Next Matches Date</a>
+            <a target="_blank" href="/pricing">Pricing</a>
+            <a target="_blank" href="/testimonials">Testimonials</a>
+            <a target="_blank" href="/contact-us">Contact Us</a>
+        </div>
     </section>
     <footer>
         <div class="centered wrapped spc-btw mt3 footer-start">
@@ -384,6 +394,22 @@
             });
         splide.mount();
     });
+    document.querySelectorAll('.menu').forEach(el=>{
+        el.addEventListener('click', (e)=>{
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const menuContent = document.getElementById('menu-content');
+        // if (e.target.classList.contains('has-menu')) {
+        //     menuContent.classList.toggle('hidden')
+        //     e.target.classList.remove('has-menu');
+        // } else {
+        // }
+        menuContent.classList.toggle('hidden')
+        e.target.classList.toggle('has-menu');
+    });
+    });
+
 </script>
 
 </html>
