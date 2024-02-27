@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OptiScan</title>
-  <script type="module" crossorigin src="/assets/index-Bko09RQ6.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-iNKAHMG7.css">
     <link rel="shortcut icon" href="/assets/logo-icon.png" type="image/x-icon">
+    <title>OptiScan</title>
+  <script type="module" crossorigin src="/assets/index--uf-FUCD.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-H-NMpxBZ.css">
 </head>
 
 <body>
@@ -93,16 +93,6 @@
                 </svg>
                 <span>Layout</span>
             </div>
-            <div id="left-pattern" title="Patern" class="hoveredon centered flexc">
-                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="16"
-                    width="16" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="none" d="M0 0h24v24H0V0z"></path>
-                    <path
-                        d="M19.51 3.08 3.08 19.51c.09.34.27.65.51.9.25.24.56.42.9.51L20.93 4.49c-.19-.69-.73-1.23-1.42-1.41zM11.88 3 3 11.88v2.83L14.71 3h-2.83zM5 3c-1.1 0-2 .9-2 2v2l4-4H5zm14 18c.55 0 1.05-.22 1.41-.59.37-.36.59-.86.59-1.41v-2l-4 4h2zm-9.71 0h2.83L21 12.12V9.29L9.29 21z">
-                    </path>
-                </svg>
-                <span>Pattern</span>
-            </div>
             <div id="left-export" title="Export" class="hoveredon centered flexc">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -122,6 +112,16 @@
                         d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
                 </svg>
                 <span class="fsz7">Slice Mode</span>
+            </div>
+            <div id="left-pattern" title="Patern" class="hoveredon centered flexc hidden">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="16"
+                    width="16" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none" d="M0 0h24v24H0V0z"></path>
+                    <path
+                        d="M19.51 3.08 3.08 19.51c.09.34.27.65.51.9.25.24.56.42.9.51L20.93 4.49c-.19-.69-.73-1.23-1.42-1.41zM11.88 3 3 11.88v2.83L14.71 3h-2.83zM5 3c-1.1 0-2 .9-2 2v2l4-4H5zm14 18c.55 0 1.05-.22 1.41-.59.37-.36.59-.86.59-1.41v-2l-4 4h2zm-9.71 0h2.83L21 12.12V9.29L9.29 21z">
+                    </path>
+                </svg>
+                <span>Pattern</span>
             </div>
             <span class="divider"></span>
             <div id="left-details" title="View Scene And Objects Details" class="hoveredon flexc centered">
@@ -145,7 +145,7 @@
 
             </div>
 
-            <div class="version fsz6 bold taligned">0.1.1.6</div>
+            <div class="version fsz6 bold taligned">0.1.1.8</div>
 
         </div>
         <div id="right-options" class="hidden">
@@ -199,6 +199,13 @@
     </section>
 
     <div class="hidden">
+        <div id="pattern-viewer-content">
+            <div class="flex spc-btw">
+                <span class="fsz12 bold">Pattern Viewer</span>
+                <div class="minimize-right-option">×</div>
+            </div>
+
+        </div>
         <div id="loader-content">
             <div class="loader">
                 <div class="box box-1">
@@ -479,20 +486,29 @@
             </div>
             <section class="accordion">
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb1">
-                    <label for="cb1" class="tab__label">Create Objects</label>
+                    <input type="checkbox" name="accordion-19" id="cb13">
+                    <label for="cb13" class="tab__label">Create Objects</label>
                     <div class="tab__content">
-                        <div class="centered p1 my1">
-                            <div id="addCube" title="Add Cube" class="hoveredon flexc centered p1 py05 info-icons">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-box"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
-                                </svg>
-                                <span class="fsz7 mt1 bold">Cube</span>
+                        <div class="flexc centered my1">
+                            <div class="flex spc-arnd w100">
+                                <div id="addModel" title="Add A Pre-Made Model" class="hoveredon w100 bordered flexc centered info-icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-bounding-box-circles" viewBox="0 0 16 16">
+                                        <path d="M2 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2M0 2a2 2 0 0 1 3.937-.5h8.126A2 2 0 1 1 14.5 3.937v8.126a2 2 0 1 1-2.437 2.437H3.937A2 2 0 1 1 1.5 12.063V3.937A2 2 0 0 1 0 2m2.5 1.937v8.126c.703.18 1.256.734 1.437 1.437h8.126a2 2 0 0 1 1.437-1.437V3.937A2 2 0 0 1 12.063 2.5H3.937A2 2 0 0 1 2.5 3.937M14 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2M2 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+                                      </svg>
+                                    <span class="fsz7 mt1 bold">Pre-Model</span>
+                                </div>
+                                <div id="addCube" title="Add Cube" class="hoveredon w100 bordered flexc centered info-icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-box"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                                    </svg>
+                                    <span class="fsz7 mt1 bold">Cube</span>
+                                </div>
                             </div>
-                            <div id="addCylinder" title="Add Cylinder"
-                                class="hoveredon flexc centered p1 py05 info-icons">
+                            <div class="flex spc-arnd w100">
+                                <div id="addCylinder" title="Add Cylinder"
+                                class="hoveredon w100 bordered flexc centered info-icons">
                                 <svg height="28" width="28" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
                                     xml:space="preserve">
@@ -512,7 +528,7 @@
                                 </svg>
                                 <span class="fsz7 mt1 bold">Cylinder</span>
                             </div>
-                            <div id="addSphere" title="Add Sphere" class="hoveredon flexc centered p1 py05 info-icons">
+                            <div id="addSphere" title="Add Sphere" class="hoveredon w100 bordered flexc centered info-icons">
                                 <svg height="28" width="28" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 275.331 275.331"
                                     xml:space="preserve">
@@ -580,51 +596,55 @@
                                 </svg>
                                 <span class="fsz7 mt1 bold">Sphere</span>
                             </div>
-                            <div id="addCone" title="Add Cone" class="hoveredon flexc centered p1 py05 info-icons">
-                                <svg height="28" width="28" viewBox="0 0 16 16" version="1.1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="m 7.5167683,1.88 c 0.6875514,0.00445 0.2031077,0.00955 0.9622486,0.018209 L 11.875,13.5 c 0.0062,2.343362 -7.7800827,2.427965 -7.75,0 z"
-                                        id="path2"
-                                        style="fill:none;stroke:var(--teal);stroke-opacity:1;stroke-width:1;stroke-dasharray:none" />
-                                </svg>
-
-                                <span class="fsz7 mt1 bold">Cone</span>
                             </div>
-                            <div id="addPolyHedron" title="Add PolyHedron"
-                                class="hoveredon flexc centered p1 py05 info-icons">
-                                <svg height="28" width="28" version="1.1" id="Layer_1"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    viewBox="0 0 511.752 511.752" xml:space="preserve">
-                                    <g>
+                            <div class="flex spc-arnd w100">
+                                <div id="addCone" title="Add Cone" class="hoveredon w100 bordered flexc centered info-icons">
+                                    <svg height="28" width="28" viewBox="0 0 16 16" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="m 7.5167683,1.88 c 0.6875514,0.00445 0.2031077,0.00955 0.9622486,0.018209 L 11.875,13.5 c 0.0062,2.343362 -7.7800827,2.427965 -7.75,0 z"
+                                            id="path2"
+                                            style="fill:none;stroke:var(--teal);stroke-opacity:1;stroke-width:1;stroke-dasharray:none" />
+                                    </svg>
+    
+                                    <span class="fsz7 mt1 bold">Cone</span>
+                                </div>
+                                <div id="addPolyHedron" title="Add PolyHedron"
+                                    class="hoveredon w100 bordered flexc centered info-icons">
+                                    <svg height="28" width="28" version="1.1" id="Layer_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 511.752 511.752" xml:space="preserve">
                                         <g>
-                                            <path
-                                                d="M510.596,251.012c-0.064-0.128-0.043-0.299-0.107-0.427l-128-224c-0.107-0.171-0.299-0.235-0.384-0.384
-                                                    c-0.128-0.192-0.128-0.405-0.277-0.597c-0.896-1.216-1.984-2.176-3.2-2.901c-0.149-0.085-0.341-0.085-0.491-0.171
-                                                    c-1.344-0.704-2.773-1.045-4.267-1.152c-0.235,0-0.427-0.171-0.661-0.171H138.543c-0.213,0-0.384,0.149-0.576,0.149
-                                                    c-1.643,0.085-3.264,0.448-4.715,1.28c-0.021,0-0.064,0-0.085,0.021c-1.237,0.725-2.347,1.685-3.243,2.923
-                                                    c-0.149,0.192-0.171,0.427-0.277,0.619c-0.107,0.149-0.277,0.213-0.384,0.384l-128,224c-0.085,0.149-0.043,0.299-0.128,0.448
-                                                    c-0.704,1.387-1.045,2.816-1.131,4.288c-0.021,0.512,0.043,0.96,0.107,1.472c0.107,1.195,0.405,2.325,0.896,3.413
-                                                    c0.128,0.299,0.085,0.661,0.256,0.96l128,224c0.171,0.299,0.491,0.405,0.683,0.683c0.725,1.024,1.557,1.877,2.603,2.603
-                                                    c0.405,0.277,0.747,0.576,1.173,0.789c1.451,0.768,3.051,1.301,4.821,1.301H373.21c1.771,0,3.371-0.533,4.843-1.301
-                                                    c0.427-0.213,0.768-0.512,1.173-0.789c1.024-0.725,1.899-1.579,2.603-2.624c0.192-0.256,0.491-0.384,0.661-0.661l128-224
-                                                    c0.149-0.277,0.107-0.597,0.235-0.896c0.512-1.131,0.832-2.304,0.939-3.541c0.043-0.469,0.107-0.896,0.085-1.365
-                                                    C511.684,253.871,511.322,252.42,510.596,251.012z M340.42,42.543l-84.544,61.483l-84.523-61.483H340.42z M355.162,319.876
-                                                    H156.591l99.285-180.501L355.162,319.876z M127.876,439.706l-88.32-154.56l88.32,51.52V439.706z M134.468,315.823L25.05,251.993
-                                                    L141.892,47.492l100.096,72.811L134.468,315.823z M362.543,469.21H149.21v-128h213.333V469.21z M383.898,439.684V336.665
-                                                    l88.299-51.499L383.898,439.684z M377.306,315.823l-107.541-195.52L369.86,47.514l116.843,204.48L377.306,315.823z" />
+                                            <g>
+                                                <path
+                                                    d="M510.596,251.012c-0.064-0.128-0.043-0.299-0.107-0.427l-128-224c-0.107-0.171-0.299-0.235-0.384-0.384
+                                                        c-0.128-0.192-0.128-0.405-0.277-0.597c-0.896-1.216-1.984-2.176-3.2-2.901c-0.149-0.085-0.341-0.085-0.491-0.171
+                                                        c-1.344-0.704-2.773-1.045-4.267-1.152c-0.235,0-0.427-0.171-0.661-0.171H138.543c-0.213,0-0.384,0.149-0.576,0.149
+                                                        c-1.643,0.085-3.264,0.448-4.715,1.28c-0.021,0-0.064,0-0.085,0.021c-1.237,0.725-2.347,1.685-3.243,2.923
+                                                        c-0.149,0.192-0.171,0.427-0.277,0.619c-0.107,0.149-0.277,0.213-0.384,0.384l-128,224c-0.085,0.149-0.043,0.299-0.128,0.448
+                                                        c-0.704,1.387-1.045,2.816-1.131,4.288c-0.021,0.512,0.043,0.96,0.107,1.472c0.107,1.195,0.405,2.325,0.896,3.413
+                                                        c0.128,0.299,0.085,0.661,0.256,0.96l128,224c0.171,0.299,0.491,0.405,0.683,0.683c0.725,1.024,1.557,1.877,2.603,2.603
+                                                        c0.405,0.277,0.747,0.576,1.173,0.789c1.451,0.768,3.051,1.301,4.821,1.301H373.21c1.771,0,3.371-0.533,4.843-1.301
+                                                        c0.427-0.213,0.768-0.512,1.173-0.789c1.024-0.725,1.899-1.579,2.603-2.624c0.192-0.256,0.491-0.384,0.661-0.661l128-224
+                                                        c0.149-0.277,0.107-0.597,0.235-0.896c0.512-1.131,0.832-2.304,0.939-3.541c0.043-0.469,0.107-0.896,0.085-1.365
+                                                        C511.684,253.871,511.322,252.42,510.596,251.012z M340.42,42.543l-84.544,61.483l-84.523-61.483H340.42z M355.162,319.876
+                                                        H156.591l99.285-180.501L355.162,319.876z M127.876,439.706l-88.32-154.56l88.32,51.52V439.706z M134.468,315.823L25.05,251.993
+                                                        L141.892,47.492l100.096,72.811L134.468,315.823z M362.543,469.21H149.21v-128h213.333V469.21z M383.898,439.684V336.665
+                                                        l88.299-51.499L383.898,439.684z M377.306,315.823l-107.541-195.52L369.86,47.514l116.843,204.48L377.306,315.823z" />
+                                            </g>
                                         </g>
-                                    </g>
-                                </svg>
-
-                                <span class="fsz7 mt1 bold">PolyHedron</span>
+                                    </svg>
+    
+                                    <span class="fsz7 mt1 bold">PolyHedron</span>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb2">
-                    <label for="cb2" class="tab__label">Import Objects</label>
+                    <input type="checkbox" name="accordion-110" id="cb23">
+                    <label for="cb23" class="tab__label">Import Objects</label>
                     <div class="tab__content">
                         <label class="drop-area">
                             <div class="drop-icon">
@@ -643,8 +663,8 @@
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb3">
-                    <label for="cb3" class="tab__label">Layer Thickness</label>
+                    <input type="checkbox" name="accordion-111" id="cb30">
+                    <label for="cb30" class="tab__label">Layer Thickness</label>
                     <div class="tab__content">
                         <div data-type="layer-thickness" class="ranged centered spc-btw w100 p1 my05">
                             <span>Layer Thickness (m)</span>
@@ -661,12 +681,12 @@
             </div>
             <section class="accordion">
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb1">
-                    <label for="cb1" class="tab__label">Material</label>
+                    <input type="checkbox" name="accordion-10" id="cb10">
+                    <label for="cb10" class="tab__label">Material</label>
                     <div class="tab__content">
                         <div class="control">
                             <span>Alloy Type</span>
-                            <label class="select addon cursor" for="alloy-type">
+                            <label class="select addon cursor" >
                                 <select data-id="alloy-type">
                                     <optgroup label="Alloy type">
                                         <option value="0">Nickel-Based Alloys</option>
@@ -686,8 +706,8 @@
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb2">
-                    <label for="cb2" class="tab__label">Powder Production Method</label>
+                    <input type="checkbox" name="accordion-11" id="cb20">
+                    <label for="cb20" class="tab__label">Powder Production Method</label>
                     <div class="tab__content">
                         <div class="control">
                             <span>Powder Production Method</span>
@@ -709,11 +729,11 @@
                                 <div class="wrapper">
                                     <div class="range-slider">
                                         <div class="range-labels">
-                                            <span class="range-label range-label-start">45</span>
-                                            <span class="range-label range-label-end">150</span>
+                                            <span class="range-label range-label-start">1</span>
+                                            <span class="range-label range-label-end">500</span>
                                         </div>
-                                        <input type="range" min="0" value="0" max="149" name="" id="">
-                                        <input type="range" min="45" value="150" max="150" name="" id="">
+                                        <input type="range" min="1" value="1" max="499" name="" id="">
+                                        <input type="range" min="2" value="500" max="500" name="" id="">
 
                                         <div class="track-wrapper">
                                             <div class="track"></div>
@@ -730,8 +750,8 @@
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb3">
-                    <label for="cb3" class="tab__label">3D Printing Process</label>
+                    <input type="checkbox" name="accordion-12" id="cb31">
+                    <label for="cb31" class="tab__label">3D Printing Process</label>
                     <div class="tab__content">
                         <div class="control">
                             <span>Process Type</span>
@@ -749,7 +769,7 @@
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb4">
+                    <input type="checkbox" name="accordion-13" id="cb4">
                     <label for="cb4" class="tab__label">Build Plate</label>
                     <div class="tab__content">
                         <div id="left-plate" title="Build Plate Settings" class="button bordered my1">
@@ -782,8 +802,8 @@
             </div>
             <section class="accordion">
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb1">
-                    <label for="cb1" class="tab__label">Pattern Viewer</label>
+                    <input type="checkbox" name="accordion-14" id="cb11">
+                    <label for="cb11" class="tab__label">Pattern Viewer</label>
                     <div class="tab__content">
                         <div class="control pattern-parts">
                         </div>
@@ -828,8 +848,8 @@
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb2">
-                    <label for="cb2" class="tab__label">Pattern Parameters</label>
+                    <input type="checkbox" name="accordion-15" id="cb21">
+                    <label for="cb21" class="tab__label">Pattern Parameters</label>
                     <div class="tab__content">
                         <span class="fsz8">Layer Height Range</span>
                         <div data-type="patternLayerHeightMin" class="ranged flex spc-btw m05">
@@ -891,8 +911,8 @@
                     </div>
                 </div>
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb3">
-                    <label for="cb3" class="tab__label">Compensation</label>
+                    <input type="checkbox" name="accordion-16" id="cb32">
+                    <label for="cb32" class="tab__label">Compensation</label>
                     <div class="tab__content">
                         <div class="checkbox button bordered my1 m1">
                             <span>Sky Writing</span>
@@ -947,8 +967,8 @@
             </div>
             <section class="accordion">
                 <div class="tab">
-                    <input type="checkbox" name="accordion-1" id="cb1">
-                    <label for="cb1" class="tab__label">Scene</label>
+                    <input type="checkbox" name="accordion-17" id="cb12">
+                    <label for="cb12" class="tab__label">Scene</label>
                     <div class="tab__content">
                         <div class="flex spc-btw m05 my05 object-count">
                             <span>Scene Objects Count</span>
@@ -958,8 +978,8 @@
                     </div>
                 </div>
                 <div class="tab selected-details">
-                    <input type="checkbox" name="accordion-1" id="cb2">
-                    <label for="cb2" class="tab__label">Selected Object </label>
+                    <input type="checkbox" name="accordion-18" id="cb22">
+                    <label for="cb22" class="tab__label">Selected Object </label>
                     <div class="tab__content">
                         <span class="fsz9 bold">Details related to currently selected object:</span>
                         <div class="details-selected-type flex spc-btw m05">
