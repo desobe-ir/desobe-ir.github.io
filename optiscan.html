@@ -93,16 +93,7 @@
                 </svg>
                 <span>Layout</span>
             </div>
-            <div id="left-export" title="Export" class="hoveredon centered flexc">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
-                    <path fill-rule="evenodd"
-                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
-                </svg>
-                <span>Export</span>
-            </div>
+
             <span class="divider"></span>
             <div id="left-layer" title="Toggle Slice View" class="hoveredon flexc centered">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
@@ -143,6 +134,16 @@
                 </svg>
                 <span>Settings</span>
 
+            </div>
+            <div id="left-export" title="Export" class="hoveredon centered flexc">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                    <path fill-rule="evenodd"
+                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                </svg>
+                <span>Export</span>
             </div>
 
             <div class="version fsz6 bold taligned">0.1.1.8</div>
@@ -667,7 +668,7 @@
                     <label for="cb30" class="tab__label">Layer Thickness</label>
                     <div class="tab__content">
                         <div data-type="layer-thickness" class="ranged centered spc-btw w100 p1 my05">
-                            <span>Layer Thickness (m)</span>
+                            <span>Layer Thickness (mm)</span>
                             <input type="tel" class="value w5rem" value="">
                         </div>
                     </div>
@@ -898,7 +899,7 @@
                             <span>Spot Time</span>
                             <div class="centered">
                                 <input type="number" class="value" value="100" min="100" max="1000">
-                                <em>(&mu;)</em>
+                                <em>(&mu;s)</em>
                             </div>
                         </div>
                         <div data-type="patternSpotSpeed" class="ranged flex spc-btw m05">
