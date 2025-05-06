@@ -1,5 +1,5 @@
 # My Email:
-[mailto: arman.rahimi@gmail.com](arman.rahimi@gmail.com)
+[arman.rahimi@gmail.com](mailto:arman.rahimi@gmail.com)
 
 
 # Build code for desobe.ir. 
